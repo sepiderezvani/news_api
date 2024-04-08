@@ -17,7 +17,7 @@ export const useNewsStore = defineStore('news',
         const noResults = ref(false)
         const route = useRoute()
         const get_news_country =async ()=>{
-       const response =  await axios.get(`https://newsapi.org/v2/top-headlines?country=${country.value}&apiKey=b3cc929b8a9c40f1bca9eaca5ac8414e`)
+       const response =  await axios.get(`https://newsapi.org/v2/top-headlines?country=${country.value}&apiKey=9aa86b7482e04ecf956df5bf7a274e33`)
             loaded.value = true
             allNews.value = response.data.articles.map(item=>({
                 author : item.author,
@@ -45,10 +45,10 @@ export const useNewsStore = defineStore('news',
                 main_news.value = null;
                 return ; // Exit the function early
             }
-            noResults.value = true
+            // noResults.value = true
         }
         const get_category_news= async ()=>{
-        const response = await axios.get(`https://newsapi.org/v2/top-headlines/sources?country=${country.value}&apiKey=b3cc929b8a9c40f1bca9eaca5ac8414e`)
+        const response = await axios.get(`https://newsapi.org/v2/top-headlines/sources?country=${country.value}&apiKey=9aa86b7482e04ecf956df5bf7a274e33`)
             all_category_news.value  =response.data.sources.map(item=>({
                 category : item.category,
                 country :item.country,
@@ -96,6 +96,6 @@ export const useNewsStore = defineStore('news',
         main_news,
         noResults,
         details_news_page,
-        details,
+        details
     }
     })

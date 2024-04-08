@@ -1,5 +1,8 @@
 <template>
     <v-container class="mx-auto v-col-xxl-12 mt-10" style="width: 100vw;height: auto;box-shadow: 1px 2px 5px #777" >
+      <router-link style="font-size: 10px;" class="font-weight-bold" to="/">
+        <v-btn style="font-size: 12px;" class="">back to home</v-btn>
+      </router-link>
       <v-row class="v-col-12">
         <v-col v-if="details" class="mx-auto v-col-8 ml-16 mt-16">
           <div class="d-inline-flex">
@@ -13,7 +16,7 @@
           <hr>
           <span>{{ details.time }}</span>
         </v-col>
-        <v-col class="v-col-2" style="height: 620px;overflow: auto">
+        <v-col class="v-col-2" style="height: 600px;overflow: auto">
           <v-card v-for="news in news_image" :key="news.id" style="padding: 18px">
             <router-link style="color: #222222" :to="{name : 'news' , params :{title :news.title}}">
               <div style="width: 130px;height: 115px"><img style="width: 100%;height: 100%" :src="news.image"></div>

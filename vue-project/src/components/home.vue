@@ -5,7 +5,7 @@
     </v-row>
     <v-container v-if="loaded && !noResults.value" class="v-col-xl-12"
                  style="width: 100vw ; height: auto;position:relative">
-      <h2 class="ml-5">latest news</h2>
+<!--      <h2 ref="latest" class="ml-5">latest news</h2>-->
       <v-row class="v-col-12 d-inline-flex">
         <v-col class="v-col-2">
           <v-card v-for="news in news_image" :key="news.id" style="padding: 18px">
@@ -55,9 +55,7 @@
         </v-col>
       </v-row>
     </v-container>
-    <div v-else class="no-results">
-      No result found.
-    </div>
+    <v-col v-if="noResults || !loaded">No result found.</v-col>
   </div>
 </template>
 <script setup>
